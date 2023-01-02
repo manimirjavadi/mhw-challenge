@@ -28,7 +28,9 @@ const props = defineProps({
         'bg-multiply/70': props.action === 'multiply',
       }"
     >
-      <Action>5 + 10 = 15</Action>
+      <Action>
+        <slot />
+      </Action>
     </div>
   </div>
 </template>
