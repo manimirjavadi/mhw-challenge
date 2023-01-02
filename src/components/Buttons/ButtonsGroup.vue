@@ -23,7 +23,7 @@ import Icon from "../Icon/Icon.vue";
   </main>
 </template>
 
-<style>
+<style scoped>
 .container {
   @apply pt-4 font-roboto;
 }

@@ -15,7 +15,7 @@ const props = defineProps({
   </div>
 </template>
 
-<style>
+<style scoped>
 .operator {
   @apply mx-auto grid grid-cols-1 text-5xl;
 }
