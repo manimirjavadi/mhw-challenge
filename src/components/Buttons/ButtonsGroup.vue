@@ -1,5 +1,8 @@
 <script setup>
+import { useCards } from "../../store/cards";
 import Icon from "../Icon/Icon.vue";
+
+const cardsHandler = useCards();
 </script>
 
 <template>
@@ -7,14 +10,21 @@ import Icon from "../Icon/Icon.vue";
     <h2 class="text-center">Filter by:</h2>
     <div class="buttonsContainer">
       <div class="buttonsGroup">
-        <button class="bg-add hover:bg-add/90 transition duration-150">
+        <button
+          class="bg-add hover:bg-add/90 transition duration-150"
+          @click="cardsHandler.fetchNumbers('add')"
+        >
           <Icon op="add" size="24" />
         </button>
-        <button class="bg-all hover:bg-all/90 transition duration-150 active">
+        <button
+          class="bg-all hover:bg-all/90 transition duration-150 active"
+          @click="cardsHandler.fetchNumbers('all')"
+        >
           <Icon op="all" size="24" />
         </button>
         <button
           class="bg-multiply hover:bg-multiply/60 transition duration-150"
+          @click="cardsHandler.fetchNumbers('multiply')"
         >
           <Icon op="multiply" size="24" />
         </button>
