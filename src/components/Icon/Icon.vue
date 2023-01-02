@@ -7,8 +7,8 @@ const props = defineProps({
     default: "add",
   },
   size: {
-    type: Number,
-    default: 48,
+    type: String,
+    default: "48",
   },
 });
 
