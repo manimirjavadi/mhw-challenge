@@ -41,7 +41,7 @@ const props = defineProps({
 }
 
 .operator {
-  @apply w-1/3 md:w-1/5 flex justify-center items-center;
+  @apply w-[80px] md:w-[100px] flex justify-center items-center;
 }
 
 .action {

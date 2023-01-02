@@ -35,7 +35,7 @@ const cardsHandler = useCards();
 
 <style scoped>
 .container {
-  @apply pt-4 font-roboto;
+  @apply pt-4 font-roboto mx-auto;
 }
 
 .buttonsContainer {
