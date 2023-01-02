@@ -11,7 +11,7 @@ const props = defineProps({
 
 <template>
   <div class="operator bg-plus">
-    <Icon :op="operator" />
+    <Icon :op="operator" size="38" />
   </div>
 </template>
 
