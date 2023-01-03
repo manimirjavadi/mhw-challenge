@@ -47,16 +47,16 @@ yarn build
 
 ## Note
 
-The project is using vite. Sometimes, using VPNs cause problems to view `localhost`. If there is a problem with that, consider adding `--host` in `package.json` run command:
+The project is using vite. Sometimes, using VPNs cause problems to view `localhost`. If there is a problem with that, consider adding `--host` in `package.json` scripts:
 
 ```javascript
 {
     //...
     "scripts": {
-    "dev": "vite --host", // This line
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+        "dev": "vite --host", // This line
+        "build": "vite build",
+        "preview": "vite preview"
+    },
     //...
 }
 ```
