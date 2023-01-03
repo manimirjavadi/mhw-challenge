@@ -1,7 +1,62 @@
-# Vue 3 + Vite
+# Front-end Coding Challenge (Vue3 + Vite)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+To run the application first clone the repo:
 
-## Recommended IDE Setup
+```bash
+git clone https://github.com/manimirjavadi/mhw-challenge.git
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Then, change directory to project file and install the packages:
+
+Changing directory with:
+```bash
+cd mhw-challenge
+```
+
+Now, install the packages:
+```bash
+# With npm
+npm install
+
+# With yarn
+yarn install
+```
+- If you are using `yarn` consider deleting `package-lock.json` first to avoid resolution inconsistencies caused by unsynchronized lock files.
+
+After installing packages, you can run the project with these commands:
+
+```bash
+# With npm
+npm run dev
+
+# With yarn
+yarn dev
+```
+
+## Building
+
+Use the commands below:
+
+```bash
+# With npm
+npm run build
+
+# With yarn
+yarn build
+```
+
+## Note
+
+The project is using vite. Sometimes, using VPNs cause problems to view `localhost`. If there is a problem with that, consider adding `--host` in `package.json` run command:
+
+```javascript
+{
+    //...
+    "scripts": {
+    "dev": "vite --host", // This line
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+    //...
+}
+```
