@@ -7,7 +7,7 @@ const cardsHandler = useCards();
 
 <template>
   <main class="container">
-    <h2 class="text-center">Filter by:</h2>
+    <h2 class="text-center text-white">Filter by:</h2>
     <div class="buttonsContainer">
       <div class="buttonsGroup">
         <button
