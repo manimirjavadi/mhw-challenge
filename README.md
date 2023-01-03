@@ -6,8 +6,14 @@ To run the application first clone the repo:
 git clone https://github.com/manimirjavadi/mhw-challenge.git
 ```
 
-Then, install the packages:
+Then, change directory to project file and install the packages:
 
+Changing directory with:
+```bash
+cd mhw-challenge
+```
+
+Now, install the packages:
 ```bash
 # With npm
 npm install
