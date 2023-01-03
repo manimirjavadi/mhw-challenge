@@ -1,20 +1,32 @@
 import { defineStore } from "pinia";
+import { useAlert } from "./alert";
 
 class ImportError extends Error {}
 
-const loadNumberModule = async (modulePath) => {
-  try {
-    return await import(/* @vite-ignore */ modulePath);
-  } catch (e) {
-    throw new ImportError(`Server Error!`);
-  }
-};
+const NUMBERS_PATH = "../assets/Numbers.json";
+const ADD_PATH = "../assets/Add.json";
+const MULTIPLY_PATH = "../assets/Multiply.json";
 
 const loadModule = async (modulePath) => {
+  const alert = useAlert();
+
   try {
+    alert.throwAlert("success", "Loaded Successfully.");
     return await import(/* @vite-ignore */ modulePath);
   } catch (e) {
-    throw new ImportError(`Missing Data!`);
+    switch (modulePath) {
+      case NUMBERS_PATH:
+        alert.throwAlert("error", "Server Error");
+        throw new ImportError("Server Error");
+
+      case ADD_PATH || MULTIPLY_PATH:
+        alert.throwAlert("error", "<MISSING DATA>");
+        throw new ImportError("<MISSING DATA>");
+
+      default:
+        alert.throwAlert("error", "Unknown Error occured!");
+        throw new ImportError("Unknown Error occured!");
+    }
   }
 };
 
@@ -24,7 +36,6 @@ export const useCards = defineStore("cards", {
       numbers: [],
       add: {},
       multiply: {},
-      cards: [],
     };
   },
 
@@ -32,27 +43,27 @@ export const useCards = defineStore("cards", {
     async fetchNumbers(filter = "all") {
       switch (filter) {
         case "multiply":
-          loadNumberModule("../assets/Numbers.json").then((res) => {
+          loadModule(NUMBERS_PATH).then((res) => {
             let data = res.default;
             this.numbers = data.filter((n) => n.action === "multiply");
           });
           break;
         case "add":
-          loadNumberModule("../assets/Numbers.json").then((res) => {
+          loadModule(NUMBERS_PATH).then((res) => {
             let data = res.default;
             this.numbers = data.filter((n) => n.action === "add");
           });
           break;
 
         default:
-          loadNumberModule("../assets/Numbers.json").then((res) => {
+          loadModule(NUMBERS_PATH).then((res) => {
             this.numbers = res.default;
           });
           break;
       }
 
-      this.add = await loadModule("../assets/Add.json");
-      this.multiply = await loadModule("../assets/Multiply.json");
+      this.add = await loadModule(ADD_PATH);
+      this.multiply = await loadModule(MULTIPLY_PATH);
     },
   },
 });
