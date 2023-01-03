@@ -21,6 +21,7 @@ npm install
 # With yarn
 yarn install
 ```
+- If you are using `yarn` consider deleting `package-lock.json` first to avoid resolution inconsistencies caused by unsynchronized lock files.
 
 After installing packages, you can run the project with these commands:
 
@@ -46,7 +47,7 @@ yarn build
 
 ## Note
 
-The project is using vite and the host running in dev mode will open network. To disable it, remove the `--host` in `package.json`:
+The project is using vite. Sometimes, using VPNs cause problems to view `localhost`. If there is a problem with that, consider adding `--host` in `package.json` run command:
 
 ```javascript
 {
