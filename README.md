@@ -1,7 +1,55 @@
-# Vue 3 + Vite
+# Front-end Coding Challenge (Vue3 + Vite)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+To run the application first clone the repo:
 
-## Recommended IDE Setup
+```bash
+git clone https://github.com/manimirjavadi/mhw-challenge.git
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Then, install the packages:
+
+```bash
+# With npm
+npm install
+
+# With yarn
+yarn install
+```
+
+After installing packages, you can run the project with these commands:
+
+```bash
+# With npm
+npm run dev
+
+# With yarn
+yarn dev
+```
+
+## Building
+
+Use the commands below:
+
+```bash
+# With npm
+npm run build
+
+# With yarn
+yarn build
+```
+
+## Note
+
+The project is using vite and the host running in dev mode will open network. To disable it, remove the `--host` in `package.json`:
+
+```javascript
+{
+    //...
+    "scripts": {
+    "dev": "vite --host", // This line
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+    //...
+}
+```
